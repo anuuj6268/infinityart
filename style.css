@@ -1,91 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;600;700&display=swap');
+:root {
+    --primary-color: #6366F1;
+    --accent-color: #3f83f8;
+    --text-color: #333333;
+    --link-color: #2563eb;
+    --background-color: #ffffff;
+    --light-gray: #f0f0f0;
+    --gray: #808080;
+    --dark-gray: #555;
+}
 *{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-.body{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
-}
-
-.container{
-    width: 80vw;
-}
-.main{
-    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
-    /* background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); */
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,300px));
-    gap: 2rem;
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
-img{
-    height: 20rem;
+.container{
+width: 80%;
+height: 100%;
+margin: auto;
+
+}
+.cards{
+
     width: 20rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    overflow: hidden;
+    margin: auto;
+
+}
+.cards img{
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+.cards img:hover{
+    scale: 1.1;
     border-radius: 10px;
 }
-.head_title{
+.main{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    
+    gap: 2rem;
+    padding: 3rem 0rem;
+    max-width: 1280px;
+    animation: lefttoright 1s ease forwards;
+    opacity: 0;
+    margin: auto;
+}
+@keyframes lefttoright {
+ 
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+
+
+    
+}
+.header{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    max-width: 1280px;
+
+}
+.head_image{
+    display: flex;
+    justify-content:space-between;
     align-items: center;
+    margin: 20px 0px;
 }
 a{
     text-decoration: none;
     color: grey;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 0 20px;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .head_image img{
-    height: 9rem;
-    width: 25rem;
+    width: 20rem;
+    height: 6.5rem;
+}
+.header_para{
+    text-align: center;
 }
 .nav{
     display: flex;
     justify-content: space-between;
-
+    gap: 0.8rem;
 }
-.head{
-    display: flex;
-    flex-direction: column;
-}
-.head_discription{
-    justify-items: center;
-    color: grey;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-.card{
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 20px;
-overflow: hidden;
-border-radius: 20px;
-}
-.card h2{
-    color: grey;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-    font-size: 1rem;
-}
-.nav:hover a{
+.links:hover{
     color: black;
 }
-.card img:hover{
-    scale: 1.05;
+
+.button{
+    display: none;
 }
-.card_image{
-    overflow: hidden;
+@media screen and (max-width:1000px) {
+    .main{
+    grid-template-columns: repeat(1,1fr);
+    }
+    .head_image{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .button{
+        display: block;
+        border: none;
+        background-color: #fffaf0;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .nav{
+        display: none;
+    }
+}
+.body{
+    background-color: #fffaf0;
 }
 .about{
     display: flex;
-margin: 20px 20px;  
+  gap: 1rem;
+
 }
 .logo img{
     width: 2rem;
     height: 2rem;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2rem;
+    margin-left: 50%;
+}
+.github img{
+    width: 2rem;
+    height: 2rem;
+}
+.github span{
+    color: var(--dark-gray);
+    font-size: 0.8rem;
+    
+}
+.github{
+    display: flex;
+    align-items: start;
 }
