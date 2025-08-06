@@ -121,6 +121,11 @@ a{
         margin-bottom: 2rem;
         text-align: center;
     }
+    .footer{
+    display : flex;
+    flex-direction: column;
+        justify-content: space-between;
+    }
     .nav{
         display: none;
     }
@@ -156,3 +161,4 @@ a{
     display: flex;
     align-items: start;
 }
+
