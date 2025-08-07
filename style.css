@@ -123,8 +123,8 @@ a{
     }
     .footer{
     display : flex;
-    flex-direction: column;
-        justify-content: space-between;
+    justify-content: space-between;
+  
     }
     .nav{
         display: none;
@@ -145,20 +145,25 @@ a{
 .footer{
     display: flex;
     justify-content: space-between;
-    margin-right: 2rem;
-    margin-left: 50%;
+    margin: auto;
 }
-.github img{
+
+.footer img{
     width: 2rem;
     height: 2rem;
 }
-.github span{
-    color: var(--dark-gray);
-    font-size: 0.8rem;
-    
-}
-.github{
+.leftFooter{
     display: flex;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
 }
-
+.leftFooter p{
+    font-size: 0.9rem;
+    margin-right: 0.7rem;
+}
+.rightFooter{
+    width: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+}
